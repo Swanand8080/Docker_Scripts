@@ -1,6 +1,6 @@
 #!/bin/bash
 #checking MySQL container named "MySQL" running in detach mode 
-
+check=0
 v1=$(docker ps | grep mysql)
 if [ $? == 0 ]
 then
@@ -10,11 +10,9 @@ then
     v3=$(docker ps | grep Up)
     if [ $? == 0 ]
     then
-    echo "Container named 'MySQL' is running mysql in detach mode"
+    check=$((check+1))
     fi
   fi
-else
-echo "Container named 'MySQL' is not running mysql in detach mode"
 fi
 
 #checking gogs container named "gogs" running in detach mode 
@@ -27,15 +25,17 @@ then
     v6=$(docker ps | grep Up)
     if [ $? == 0 ]
     then
-    echo "Container named 'gogs' is running gogs in detach mode"
     v7=$(docker ps | grep 10080)
     if [ $? == 0 ]
-      then 
-      echo "gogs container is forwarded to 10080 port"
+      then
+      check=$((check+1)) 
       fi
     fi
   fi
-else
-echo "Container named 'gogs' is not running gogs in detach mode"
 fi
-
+if [ $check == 2 ]
+then
+  echo "Task5 Ran Successfully"
+else
+  echo "Task5 did not Ran Successfully"
+fi

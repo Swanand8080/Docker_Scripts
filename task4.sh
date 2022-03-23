@@ -1,8 +1,10 @@
 #!/bin/bash
 #checking /test/test.txt in local system
+check=0
 FILE=/test/test.txt
-if test -f "$FILE"; then
-    echo "$FILE exists."
+if test -f "$FILE"; 
+then
+  check=$((check+1))
 fi
 
 #checking Centos container running in the detach mode
@@ -15,15 +17,19 @@ then
     v3=$(docker ps | grep Up)
     if [ $? == 0 ]
     then 
-      echo "Centos container is running in the detach mode"
       v4=$(docker exec -it Myapp3 ls /tmp | grep test.txt)
       if [ $? == 0 ]
-      then 
-       echo "/tmp/test.txt is present in the CentOS Container"
+      then
+        check=$((check+1)) 
       fi
     fi
   fi
+fi
+
+if [ $check == 2 ]
+then
+  echo "Task4 Ran Successfully"
 else
-echo "Centos container is not running in the detach mode"
+  echo "Task4 did not Ran Successfully"
 fi
 
