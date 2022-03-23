@@ -19,25 +19,21 @@ then
     v4=$(docker ps | grep Up)
     if [ $? == 0 ]
     then 
-   # echo "Container named 'Myapp' is running ubuntu in detach mode"
-    check=$((check+1))
+      check=$((check+1))
+      v5=$(docker exec -it Myapp ls / | grep sample )
+      if [ $? == 0 ]
+      then
+        check=$((check+1))
+        v6=$(docker exec -it Myapp ls /sample | grep abc.txt)
+        if [ $? == 0 ]
+        then
+          check=$((check+1))
+        fi
+      fi 
     fi
   fi
 fi
 
-#checking /sample directory in Ubuntu container 
-v5=$(docker exec -it Myapp ls / | grep sample )
-if [ $? == 0 ]
-then
-  #echo "/sample exists in the Myapp container"
-  check=$((check+1))
-  v6=$(docker exec -it Myapp ls /sample | grep abc.txt)
-  if [ $? == 0 ]
-  then
-    #echo "/sample/abc.txt exists in Myapp container "
-    check=$((check+1))
-  fi
-fi 
 
 if [ $check == 4 ]
 then
