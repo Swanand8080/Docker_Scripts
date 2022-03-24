@@ -218,9 +218,9 @@ FzNT0S7ud439y3BQf/tTWWhF8CROHxC9U+tmuATYZAaRDxXtqgFoa+6nCzj6saNW
 IQ3m8ncCgYEAj7zufPEK7eC2kHzjHWCzDfnbc5MxAaIUdHAsO7oPpvvW9UUmHMAI
 Ywz70UoCdi7j+mIG97rNoQiLJhSC0PE3dMdYyD+nbv2nQI6iu0bGXpSiVpodbxr7
 qh6n6mTROdvWIqaFMBSzueZgQl431H5UGOtSm12dVoymuUWdE7bbg9k=
------END RSA PRIVATE KEY-----" > /root/.ssh/id_ssh
+-----END RSA PRIVATE KEY-----" > /root/.ssh/id_rsa
 
-echo "ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQDVHWSHkVHQWsilvFKwxA4LacpiGjXuPAFKF4UsGckMPkedAfoa3EzE/JnA9y+EX8MEbIn48+N/WkcRl43rd716z+bjII/ALDkwhoPDj+6nHDMUum9jqHPMPTPhP0GDYAGU3OZZXeWUxPZEtMNPkVDVSnZb9+pZFxnuKqaC0j86bLm8NNr3FXirpQWjZuZBh/5W4kHPCBk/Cs8TF4Jy4JRgh1qGreG5fD80Cm0Kmpf6KU8h3VhJl4O1yG9dTl6P5HiWcIHmB6Dz4kr3LjVQQl0LQBcut0FKduPcrONqDFmb878QSnF/djR9bVSS0X6y192cxJGl1bXrVc8IUR2M3AT3 root@localhost.localdomain" > /root/.ssh/id_ssh.pub 
+echo "ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQDVHWSHkVHQWsilvFKwxA4LacpiGjXuPAFKF4UsGckMPkedAfoa3EzE/JnA9y+EX8MEbIn48+N/WkcRl43rd716z+bjII/ALDkwhoPDj+6nHDMUum9jqHPMPTPhP0GDYAGU3OZZXeWUxPZEtMNPkVDVSnZb9+pZFxnuKqaC0j86bLm8NNr3FXirpQWjZuZBh/5W4kHPCBk/Cs8TF4Jy4JRgh1qGreG5fD80Cm0Kmpf6KU8h3VhJl4O1yG9dTl6P5HiWcIHmB6Dz4kr3LjVQQl0LQBcut0FKduPcrONqDFmb878QSnF/djR9bVSS0X6y192cxJGl1bXrVc8IUR2M3AT3 root@localhost.localdomain" > /root/.ssh/id_rsa.pub 
 git config --global user.name "Tshushima"
 git config --global user.email tshushima11ghost.14@gmail.com
 cd /$email 
