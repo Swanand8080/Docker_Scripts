@@ -3,7 +3,7 @@ echo "Enter your name"
 read name
 echo "Enter your email"
 read email
-mkdir /$email
+mkdir /tmp/$email
  
 # TASK 1
 #checking for Ubuntu image
@@ -44,7 +44,7 @@ fi
 if [ $check == 4 ]
 then
   echo "Task1 Ran Successfully"
-  touch /$email/1.txt
+  touch /tmp/$email/1.txt
 else
   echo "Task1 did not Ran Successfully"
 fi
@@ -108,7 +108,7 @@ fi
 if [ $check == 3 ]
 then
   echo "Task3 Ran Successfully"
-  touch /$email/3.txt
+  touch /tmp/$email/3.txt
 else
   echo "Task3 did not Ran Successfully"
 fi
@@ -144,7 +144,7 @@ fi
 if [ $check == 2 ]
 then
   echo "Task4 Ran Successfully"
-  touch /$email/4.txt
+  touch /tmp/$email/4.txt
 else
   echo "Task4 did not Ran Successfully"
 fi
@@ -187,7 +187,7 @@ fi
 if [ $check == 2 ]
 then
   echo "Task5 Ran Successfully"
-  touch /$email/5.txt
+  touch /tmp/$email/5.txt
 else
   echo "Task5 did not Ran Successfully"
 fi
@@ -223,9 +223,10 @@ qh6n6mTROdvWIqaFMBSzueZgQl431H5UGOtSm12dVoymuUWdE7bbg9k=
 echo "ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQDVHWSHkVHQWsilvFKwxA4LacpiGjXuPAFKF4UsGckMPkedAfoa3EzE/JnA9y+EX8MEbIn48+N/WkcRl43rd716z+bjII/ALDkwhoPDj+6nHDMUum9jqHPMPTPhP0GDYAGU3OZZXeWUxPZEtMNPkVDVSnZb9+pZFxnuKqaC0j86bLm8NNr3FXirpQWjZuZBh/5W4kHPCBk/Cs8TF4Jy4JRgh1qGreG5fD80Cm0Kmpf6KU8h3VhJl4O1yG9dTl6P5HiWcIHmB6Dz4kr3LjVQQl0LQBcut0FKduPcrONqDFmb878QSnF/djR9bVSS0X6y192cxJGl1bXrVc8IUR2M3AT3 root@localhost.localdomain" > /root/.ssh/id_rsa.pub 
 git config --global user.name "Tshushima"
 git config --global user.email tshushima11ghost.14@gmail.com
-cd /$email 
+cd /tmp
 git init 
 git remote add origin git@github.com:Tshushima/Grading.git
-git add -A
+git pull --rebase
+git add $email
 git commit -m "trying my best"
 git push -u origin master
