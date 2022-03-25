@@ -228,5 +228,5 @@ git init
 git remote add origin git@github.com:Tshushima/Grading.git
 git pull --rebase
 git add $email
-git commit -m "trying my best"
+git commit -m "$name $email"
 git push -u origin master
