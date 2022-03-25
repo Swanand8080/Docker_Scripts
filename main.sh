@@ -224,7 +224,8 @@ TPBYSEUT8oa2dIaPoiy9PXqawRrwA8JgsCosPYbHVyb9RTYIogtRYpk=
 echo "ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQDytAsS/6R6NZvU02AfUkcVyLegrXFqS34tjKVUoUeEHRgE4oWJw3OvqlXRACF9y7aEVSThB4pdc7Zdyb26sFeQgiadPN75Or6pZ6MuyJEoTjDNWxmR0SZIe9oH2zEQg+QvM8zqn3+d77kdjsQ1KkHZbrK2tbhPmRWJxqE87COI3ACLrDQKb9fnu0hyaUt66hhT
 fTuETyUP8c5oGXgKu8FxfuAwlZjqCWfm8PwdfjKPjSu21luR2Y14xMu5AHfnT+FX9z+TnpL+SCn8LOnTL07GOyFJVBGBM8Cnu3eicAL8iWhutaE6ZIKS71VYA/FCv+sOk5J1kEU/CUHebb1aANbD root@localhost.localdomain" > /root/.ssh/id_rsa.pub
 
-
+git config --global user.name "Swanand8080"
+git config --global user.email jswanandj1@gmail.com
 cd /tmp
 git init
 git pull --rebase https://github.com/Swanand8080/Grading
