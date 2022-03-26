@@ -231,5 +231,5 @@ git init
 git pull --rebase https://github.com/Swanand8080/Grading
 git remote add $email git@github.com:Swanand8080/Grading.git
 git add .
-git commit -m "Please work"
+git commit -m "$name $email"
 git push -u $email master
