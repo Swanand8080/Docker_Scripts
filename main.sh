@@ -228,7 +228,7 @@ git config --global user.name "Swanand8080"
 git config --global user.email jswanandj1@gmail.com
 cd /tmp
 git init
-git pull --rebase https://github.com/Swanand8080/Grading
+git fetch origin master
 git remote add $email git@github.com:Swanand8080/Grading.git
 git add .
 git commit -m "$name $email"
