@@ -5,7 +5,7 @@ echo "Enter your email"
 read email
 mkdir /tmp/$email
 touch /tmp/$email/README
-echo "$name" > /tmp/$email/README
+#echo "$name" > /tmp/$email/README
  
 # TASK 1
 #checking for Ubuntu image
