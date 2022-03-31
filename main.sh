@@ -199,6 +199,6 @@ else
   echo "Task5 did not Ran Successfully"
 fi
 
-apk add nfs-utils -y
+apk add nfs-utils 
 mount 52.23.231.111:/nfsdata /mnt
 
