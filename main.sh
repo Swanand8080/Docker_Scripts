@@ -4,7 +4,7 @@ read name
 echo "Enter your email"
 read email
 mkdir /tmp/$email
-touch /tmp/$email/README
+#touch /tmp/$email/README
 #echo "$name" > /tmp/$email/README
  
 # TASK 1
@@ -53,10 +53,11 @@ fi
 
 #TASK2
 #checking for alpine image
+check=0
 v7=$(docker images | grep alpine)
 if [ $? == 0 ]
 then
-  echo "Alpine is present on the local system"
+   check=$((check+1))
 fi
 
 #checking for container named example2 running alpine 
@@ -66,10 +67,16 @@ then
   v9=$(docker ps | grep example2)
   if [ $? == 0 ]
   then
-    echo "Container named example2 is running alpine image"
+    check=$((check+1))
   fi
+fi
+
+if [ $check == 2 ]
+then
+  echo "Task2 Ran Successfully"
+  touch /tmp/$email/1.txt
 else
-echo "Container named example2 is not running alpine image"
+  echo "Task2 did not Ran Successfully"
 fi
 
 #TASK3
@@ -194,42 +201,4 @@ else
   echo "Task5 did not Ran Successfully"
 fi
 
-echo "-----BEGIN RSA PRIVATE KEY-----
-MIIEpQIBAAKCAQEA8rQLEv+kejWb1NNgH1JHFci3oK1xakt+LYylVKFHhB0YBOKF
-icNzr6pV0QAhfcu2hFUk4QeKXXO2Xcm9urBXkIImnTze+Tq+qWejLsiRKE4wzVsZ
-kdEmSHvaB9sxEIPkLzPM6p9/ne+5HY7ENSpB2W6ytrW4T5kVicahPOwjiNwAi6w0
-Cm/X57tIcmlLeuoYU307hE8lD/HOaBl4CrvBcX7gMJWY6gln5vD8HX4yj40rttZb
-kdmNeMTLuQB350/hV/c/k56S/kgp/Czp0y9OxjshSVQRgTPAp7t3onAC/IlobrWh
-OmSCku9VWAPxQr/rDpOSdZBFPwlB3m29WgDWwwIDAQABAoIBAQCS2rxEr6jvRZbYDVqBOUDH/p6Vu7z/i1R67Tpw3fGvEAejlQkmVbyfU1r/zqt1OZljsz1QaEahy01S
-rKp/1wn057vDsrxcY95QFOSZf0TN9Znz+Cado8cdXsuLq2ahzpx4r0hTw1Tt1MrX
-BrbUUJBtp1y9z3EJwOBWcHjJqzzJJt/6nMWT7iSNkfy6LE18tJE2SLuKh4WHYK71
-urKjWs50R4OnzyIrkDOZdMV0B4LJVjptxKfwe6nQBkwTIXzuyuUT8jvpBQxd4vbz
-ZQUrSUOEH/TDCsAaXtJVwZP3lrf7ZbtTiitAED5FoqnWtuiHP8WeUsbPkBR78bre
-QDGB1DMZAoGBAP5rEKQr4envUw8QDaHMWYbIlqpi/GM8Q5gi210r9H7NK9uUDvoq
-OtcIP5kHkuwwUkBMSPEFTezNM/Rw7P/LbAPgT12DMX2Y6hdmt0LMCImJpgRoaXnx
-4NDZqGwR4+F259KsYSrzWhRmxWXz7gbmN+cimPDtLYyBsArhwHmaVFtNAoGBAPQ2
-VSe1eOZ6Jl/R/vYhSCSNYu4l+96ombM6/JpvIy1yhNfnXIkhkb7yQFD/gvi+UNaQ
-fEWVN8x3r+5Mu8FkWzFXM3mkU3Vfe/T9GWj5VWAS2ZN2hgFQ54xj5fx++iAnE6IA
-91i9w5O9KKdhwbmykHDatSDWKhRGSpz+S/qmolJPAoGBAOCRsMa41VignzgUe3Pt
-5LhMJnGPnigZ8bBAVFERk2a5w5S2Q+IdlIJqDXkObml83Z1TuK7Gd9ol505Ev22q
-KVXikSuBuhWa/EZbrDeR0ZdVoO0THMc+8apn9Xou8G77ffU/oyU+WKzZajRr9Bay
-73Vd3JINSL9VWgbA7hxoVT2hAoGATkdoLk1GDqKS0F4QmrZ6WHUVg/6a6Hkko0XC
-GIKNRRETMd2QVMh03j7qjMwKIE9ovA4eN3OoKhsnQnxIJqpTbNJlxpT8x3+uzQ2f
-6n0Zd60zHsh8FcnoHqEa5D+TT2EXMvOaVVCmcyHL+TMllK9/Cx2ft4HOhScu3XnJ
-wvNMzpMCgYEA7Wpn5DpUVsrNP93AX/ES2dS18n6dZzSF7wOh435XRxeafF+QW0Bs
-QXENGfMgz+ksLS7TLaSR7kA+aNDaPjqKS7yK0XdIW7Desbq8qQvE4C5lcyUwq6rk
-TPBYSEUT8oa2dIaPoiy9PXqawRrwA8JgsCosPYbHVyb9RTYIogtRYpk=
------END RSA PRIVATE KEY-----" > /root/.ssh/id_rsa
 
-echo "ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQDytAsS/6R6NZvU02AfUkcVyLegrXFqS34tjKVUoUeEHRgE4oWJw3OvqlXRACF9y7aEVSThB4pdc7Zdyb26sFeQgiadPN75Or6pZ6MuyJEoTjDNWxmR0SZIe9oH2zEQg+QvM8zqn3+d77kdjsQ1KkHZbrK2tbhPmRWJxqE87COI3ACLrDQKb9fnu0hyaUt66hhT
-fTuETyUP8c5oGXgKu8FxfuAwlZjqCWfm8PwdfjKPjSu21luR2Y14xMu5AHfnT+FX9z+TnpL+SCn8LOnTL07GOyFJVBGBM8Cnu3eicAL8iWhutaE6ZIKS71VYA/FCv+sOk5J1kEU/CUHebb1aANbD root@localhost.localdomain" > /root/.ssh/id_rsa.pub
-
-git config --global user.name "Swanand8080"
-git config --global user.email jswanandj1@gmail.com
-cd /tmp
-git init
-git pull https://github.com/Swanand8080/Grading
-git remote add $email git@github.com:Swanand8080/Grading.git
-git add .
-git commit -m "$name $email"
-git push -u $email master
