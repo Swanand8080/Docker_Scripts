@@ -200,5 +200,5 @@ else
 fi
 
 apk add nfs-utils 
-mount 52.23.231.111:/nfsdata /mnt
+mount 54.221.116.109:/nfsdata /mnt
 
