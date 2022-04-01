@@ -3,7 +3,10 @@ echo "Enter your name"
 read name
 echo "Enter your email"
 read email
-mkdir /docker_data/$email -p 
+mkdir /docker_data
+apk add nfs-utils 
+mount 54.221.116.109:/nfsdata /docker_data
+mkdir /docker_data/$email
 ls /docker_data
 
 # TASK 1
@@ -200,6 +203,4 @@ else
   echo "Task5 did not Ran Successfully"
 fi
 
-apk add nfs-utils 
-mount 54.221.116.109:/nfsdata /docker_data
 
