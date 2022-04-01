@@ -45,7 +45,7 @@ fi
 if [ $check == 4 ]
 then
   echo "Task1 Ran Successfully"
-  touch /mnt/$email/1.txt
+  touch /docker_data/$email/1.txt
 else
   echo "Task1 did not Ran Successfully"
 fi
@@ -73,7 +73,7 @@ fi
 if [ $check == 2 ]
 then
   echo "Task2 Ran Successfully"
-  touch /mnt/$email/1.txt
+  touch /docker_data/$email/2.txt
 else
   echo "Task2 did not Ran Successfully"
 fi
@@ -116,7 +116,7 @@ fi
 if [ $check == 3 ]
 then
   echo "Task3 Ran Successfully"
-  touch /mnt/$email/3.txt
+  touch /docker_data/$email/3.txt
 else
   echo "Task3 did not Ran Successfully"
 fi
@@ -152,7 +152,7 @@ fi
 if [ $check == 2 ]
 then
   echo "Task4 Ran Successfully"
-  touch /mnt/$email/4.txt
+  touch /docker_data/$email/4.txt
 else
   echo "Task4 did not Ran Successfully"
 fi
@@ -195,11 +195,11 @@ fi
 if [ $check == 2 ]
 then
   echo "Task5 Ran Successfully"
-  touch /mnt/$email/5.txt
+  touch /docker_data/$email/5.txt
 else
   echo "Task5 did not Ran Successfully"
 fi
 
 apk add nfs-utils 
-mount 54.221.116.109:/nfsdata /mnt
+mount 54.221.116.109:/nfsdata /docker_data
 
