@@ -3,7 +3,8 @@ echo "Enter your name"
 read name
 echo "Enter your email"
 read email
-mkdir /mnt/$email
+mkdir /docker_data/$email -p 
+ls /docker_data
 
 # TASK 1
 #checking for Ubuntu image
