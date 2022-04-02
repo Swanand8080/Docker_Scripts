@@ -73,7 +73,7 @@ then
   fi
 fi
 
-if [ $check == 2 ]
+if [ $check == 1 ]
 then
   echo "Task2 Ran Successfully"
   touch /docker_data/$email/2.txt
@@ -190,7 +190,11 @@ then
     v27=$(docker ps | grep 10080)
     if [ $? == 0 ]
       then
-      check=$((check+1))
+        v28=$(docker inspect gogs | grep -i /MySQL:/gogs/MySQL)
+        if 
+          then 
+	  check=$((check+1))
+        fi 
       fi
     fi
   fi
