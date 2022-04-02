@@ -191,8 +191,8 @@ then
     if [ $? == 0 ]
       then
         v28=$(docker inspect gogs | grep -i /MySQL:/gogs/MySQL)
-        if 
-          then 
+        if [ $? == 0 ]
+	then 
 	  check=$((check+1))
         fi 
       fi
