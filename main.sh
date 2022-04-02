@@ -4,9 +4,9 @@ read name
 echo "Enter your email"
 read email
 mkdir /docker_data
+mkdir /docker_data/$email
 apk add nfs-utils 
 mount 18.234.36.184:/nfsdata /docker_data
-mkdir /docker_data/$email
 ls /docker_data
 
 # TASK 1
